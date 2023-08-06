@@ -60,19 +60,27 @@ let userName = "";
 //   console.log("numは0です。");
 // }
 
-let sum = 0
-let i = 1
+let sum = 0;
+let i = 1;
 // while(i <= 100) {
 //   sum += i
 //   i++
 // }
-console.log(sum)
+console.log(sum);
 
-while(true) {
-  if(i > 100) {
-    break
+// while(true) {
+//   if(i > 100) {
+//     break
+//   }
+//   sum += i
+//   i++
+// }
+console.log(sum);
+
+while (i <= 100) {
+  i++;
+  if (i % 2 === 1) {
+    continue;
   }
-  sum += i
-  i++
+  console.log(i);
 }
-console.log(sum)

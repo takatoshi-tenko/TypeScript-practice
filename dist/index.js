@@ -56,11 +56,18 @@ let i = 1;
 //   i++
 // }
 console.log(sum);
-while (true) {
-    if (i > 100) {
-        break;
-    }
-    sum += i;
-    i++;
-}
+// while(true) {
+//   if(i > 100) {
+//     break
+//   }
+//   sum += i
+//   i++
+// }
 console.log(sum);
+while (i <= 100) {
+    i++;
+    if (i % 2 === 1) {
+        continue;
+    }
+    console.log(i);
+}
