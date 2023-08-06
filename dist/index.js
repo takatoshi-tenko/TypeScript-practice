@@ -109,26 +109,31 @@
 // };
 // console.log(user)
 // console.log(name2)
-const obj1 = {
-    foo: 123,
-    bar: 456,
-    baz: 789,
-};
-const obj2 = {
-    ...obj1,
-    foo: -9999,
-};
-console.log(obj2);
-const obj3 = {
-    foo: 123,
-    bar: 456
-};
-const obj4 = {
-    bar: -999,
-    baz: -9999
-};
-const obj5 = {
-    ...obj3,
-    ...obj4
-};
-console.log(obj5);
+// const obj1 = {
+//   foo: 123,
+//   bar: 456,
+//   baz: 789,
+// };
+// const obj2 = {
+//   ...obj1,
+//   foo: -9999,
+// };
+// console.log(obj2);
+// const obj3 = {
+//   foo: 123,
+//   bar: 456
+// }
+// const obj4 = {
+//   bar: -999,
+//   baz: -9999
+// }
+// const obj5 = {
+//   ...obj3,
+//   ...obj4
+// }
+// console.log(obj5)
+const foo = { num: 1224 };
+const bar = foo;
+console.log(bar.num);
+bar.num = 0;
+console.log(foo.num);
