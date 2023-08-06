@@ -5,7 +5,7 @@
 // console.log(test);
 // let greeting, target;
 // greeting = "HEllo";
-// target = "wotlf";
+// target = "World!";
 // console.log(greeting + target);
 // import { createInterface } from "readline";
 // const rl = createInterface({
@@ -30,7 +30,7 @@
 //   }
 //   rl.close();
 // });
-let userName = "";
+// let userName = "";
 // if (userName === "") userName = "名無し";
 // console.log(userName);
 // if (userName === "") {
@@ -76,7 +76,7 @@ let userName = "";
 //   sum += i;
 // }
 // console.log(sum);
-// for (let i = 0; i <= 100; i++) { 
+// for (let i = 0; i <= 100; i++) {
 //   if (i % 3 === 0 && i % 5 === 0) {
 //     console.log("FizzBuzz");
 //   } else if (i % 3 === 0) {
@@ -89,7 +89,23 @@ let userName = "";
 // }
 const obj = {
     foo: 123,
-    bar: "Hello World!"
+    bar: "Hello World!",
 };
 console.log(obj.foo);
 console.log(obj.bar);
+const obj2 = {
+    foo: 555,
+    bar: "文字列",
+};
+let input = "";
+const user = {
+    name: input ? input : "名無し",
+    age: 20,
+};
+const name2 = input ? input : "名無し";
+const user2 = {
+    name2,
+    age2: 20,
+};
+console.log(user);
+console.log(name2);
