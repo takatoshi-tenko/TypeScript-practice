@@ -60,13 +60,13 @@ let userName = "";
 //   console.log("numは0です。");
 // }
 
-let sum = 0;
-let i = 1;
+// let sum = 0;
+// let i = 1;
 // while(i <= 100) {
 //   sum += i
 //   i++
 // }
-console.log(sum);
+// console.log(sum);
 
 // while(true) {
 //   if(i > 100) {
@@ -75,12 +75,18 @@ console.log(sum);
 //   sum += i
 //   i++
 // }
-console.log(sum);
+// console.log(sum);
 
-while (i <= 100) {
-  i++;
-  if (i % 2 === 1) {
-    continue;
-  }
-  console.log(i);
+// while (i <= 100) {
+//   i++;
+//   if (i % 2 === 1) {
+//     continue;
+//   }
+//   console.log(i);
+// }
+
+let sum = 0;
+for (let i: number = 1; i <= 100; i++) {
+  sum += i;
 }
+console.log(sum);
