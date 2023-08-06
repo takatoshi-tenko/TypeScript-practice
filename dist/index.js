@@ -87,25 +87,48 @@
 //     console.log(i);
 //   }
 // }
-const obj = {
+// const obj = {
+//   foo: 123,
+//   bar: "Hello World!",
+// };
+// console.log(obj.foo);
+// console.log(obj.bar);
+// const obj2 = {
+//   foo: 555,
+//   bar: "文字列",
+// };
+// let input = "";
+// const user = {
+//   name: input ? input : "名無し",
+//   age: 20,
+// };
+// const name2 = input ? input : "名無し";
+// const user2 = {
+//   name2,
+//   age2: 20,
+// };
+// console.log(user)
+// console.log(name2)
+const obj1 = {
     foo: 123,
-    bar: "Hello World!",
+    bar: 456,
+    baz: 789,
 };
-console.log(obj.foo);
-console.log(obj.bar);
 const obj2 = {
-    foo: 555,
-    bar: "文字列",
+    ...obj1,
+    foo: -9999,
 };
-let input = "";
-const user = {
-    name: input ? input : "名無し",
-    age: 20,
+console.log(obj2);
+const obj3 = {
+    foo: 123,
+    bar: 456
 };
-const name2 = input ? input : "名無し";
-const user2 = {
-    name2,
-    age2: 20,
+const obj4 = {
+    bar: -999,
+    baz: -9999
 };
-console.log(user);
-console.log(name2);
+const obj5 = {
+    ...obj3,
+    ...obj4
+};
+console.log(obj5);
