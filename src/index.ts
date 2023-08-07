@@ -166,7 +166,16 @@ const bar = { ...foo };
 console.log(bar.num);
 console.log(foo.num);
 
-const foo2 = { obj: { num: 1234 } };
-const bar2 = { ...foo2 };
-bar2.obj.num = 0;
-console.log(foo2.obj.num);
+// const foo2 = { obj: { num: 1234 } };
+// const bar2 = { ...foo2 };
+// bar2.obj.num = 0;
+// console.log(foo2.obj.num);
+
+const obj: {
+  foo: number;
+  bar: string;
+} = {
+  foo: 123,
+  bar: "Hello, World!",
+};
+console.log(obj)
