@@ -247,14 +247,23 @@
 //   father: Parent;
 //   child: Child;
 // };
-type S = Family<Animal, Human>;
-type T = Famili<Human, Animal>;
+// type S = Family<Animal, Human>;
+// type T = Famili<Human, Animal>;
 
-type Animal = {
+// type Animal = {
+//   name: string;
+// };
+// type Family<Parent = Animal, Child = Animal> = {
+//   mother: Parent;
+//   father: Parent;
+//   child: Child;
+// };
+
+const arr1: boolean[] = [false, true];
+const arr2: Array<{
   name: string;
-};
-type Family<Parent = Animal, Child = Animal> = {
-  mother: Parent;
-  father: Parent;
-  child: Child;
-};
+}> = [{ name: "山田さん" }, { name: "田中さん" }, { name: "鈴木さん" }];
+console.log(arr1);
+console.log(arr2);
+const arr: readonly number[] = [1, 10, 100];
+// arr[1] = 100
