@@ -161,10 +161,10 @@
 // bar.num = 0;
 // console.log(foo.num);
 
-const foo = { num: 1234 };
-const bar = { ...foo };
-console.log(bar.num);
-console.log(foo.num);
+// const foo = { num: 1234 };
+// const bar = { ...foo };
+// console.log(bar.num);
+// console.log(foo.num);
 
 // const foo2 = { obj: { num: 1234 } };
 // const bar2 = { ...foo2 };
@@ -180,14 +180,14 @@ console.log(foo.num);
 // };
 // console.log(obj)
 
-type FooBarObj = {
-  foo: number;
-  bar: string;
-};
-const obj: FooBarObj = {
-  foo: 123,
-  bar: "Hello world",
-};
+// type FooBarObj = {
+//   foo: number;
+//   bar: string;
+// };
+// const obj: FooBarObj = {
+//   foo: 123,
+//   bar: "Hello world",
+// };
 
 // console.log(obj)
 
@@ -213,21 +213,3 @@ const obj: FooBarObj = {
 // console.log(data);
 // console.log(data.chicken);
 // console.log(data.弁当);
-
-type FooBar = {
-  foo: string;
-  bar: number;
-};
-type FooBarBaz = {
-  foo: string;
-  bar: number;
-  baz: boolean;
-};
-const obj: FooBarBaz = {
-  foo: "hi",
-  bar: 1,
-  baz: false,
-};
-const obj2: FooBar = obj;
-console.log(obj)
-console.log(obj2)
