@@ -259,11 +259,23 @@
 //   child: Child;
 // };
 
-const arr1: boolean[] = [false, true];
-const arr2: Array<{
-  name: string;
-}> = [{ name: "山田さん" }, { name: "田中さん" }, { name: "鈴木さん" }];
-console.log(arr1);
-console.log(arr2);
-const arr: readonly number[] = [1, 10, 100];
+// const arr1: boolean[] = [false, true];
+// const arr2: Array<{
+//   name: string;
+// }> = [{ name: "山田さん" }, { name: "田中さん" }, { name: "鈴木さん" }];
+// console.log(arr1);
+// console.log(arr2);
+// const arr: readonly number[] = [1, 10, 100];
 // arr[1] = 100
+
+const arr = [1, 10, 100];
+for (const elm of arr) {
+  console.log(elm);
+}
+console.log(arr)
+
+const arr1 = [1, 10, 100]
+for (let elm of arr1) {
+  elm *= 10
+  console.log(elm)
+}
