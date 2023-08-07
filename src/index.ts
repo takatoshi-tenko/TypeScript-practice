@@ -231,13 +231,30 @@
 // const obj2: FooBar = obj;
 // console.log(obj)
 // console.log(obj2)
-type Family<Parent, Child> = {
+// type Family<Parent, Child> = {
+//   mother: Parent;
+//   father: Parent;
+//   child: Child;
+// };
+// const obj: Family<number, string> = {
+//   mother: 0,
+//   father: 100,
+//   child: "1000",
+// };
+
+// type Family<Parent extends HasName, Child extends Parent> = {
+//   mother: Parent;
+//   father: Parent;
+//   child: Child;
+// };
+type S = Family<Animal, Human>;
+type T = Famili<Human, Animal>;
+
+type Animal = {
+  name: string;
+};
+type Family<Parent = Animal, Child = Animal> = {
   mother: Parent;
   father: Parent;
   child: Child;
-};
-const obj: Family<number, string> = {
-  mother: 0,
-  father: 100,
-  child: "1000",
 };
