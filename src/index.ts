@@ -303,8 +303,32 @@
 // console.log(num);
 // console.log(foo);
 
-const arr = [1, 2, 4, 8, 16, 32];
-const [first, second, third] = arr;
-console.log(first);
-console.log(second);
-console.log(third);
+// const arr = [1, 2, 4, 8, 16, 32];
+// const [first, second, third] = arr;
+// console.log(first);
+// console.log(second);
+// console.log(third);
+
+type obj = { foo?: number };
+const obj1: obj = {};
+const obj2: obj = { foo: -1234 };
+
+const { foo = 500 } = obj1;
+console.log(foo);
+const { foo: bar = 500 } = obj2;
+console.log(bar);
+
+type NestedObj = {
+  obj?: {
+    foo: number;
+  };
+};
+const nested1: NestedObj = {
+  obj: { foo: 123 },
+};
+const nested2: NestedObj = {};
+const { obj: { foo: foo1 } = { foo: 500 } } = nested1;
+const { obj: { foo: foo2 } = { foo: 500 } } = nested2;
+console.log({ obj: { foo: foo2 } })
+console.log(nested1);
+console.log(nested2);
