@@ -333,6 +333,47 @@
 // console.log(nested1);
 // console.log(nested2);
 
-const d = new Date()
-console.log(d)
-console.log(Date.now())
+// const d = new Date()
+// console.log(d)
+// console.log(Date.now())
+
+type User = {
+  name: string;
+  age: number;
+  premiumUser: boolean;
+};
+const data: string = `
+uhyo,26,1
+John Smith,17,0
+Mary Sue,14,1
+`;
+
+// const result = data.trim().split(',')
+// console.log(result)
+
+const users: User[] = []
+const lines = data.split('\n')
+for (const line of lines) {
+  if(line === "") {
+    continue
+  }
+  const [name, ageString, premiumString] = line.split(',')
+  const age = Number(ageString)
+  const premiumUser = premiumString === "1"
+
+  users.push({
+    name,
+    age,
+    premiumUser
+  })
+}
+console.log(lines)
+
+for (const user of users) {
+  if (user.premiumUser) {
+    console.log(`${user.name}(${user.age})はプレミアムユーザーです。`);
+  } else {
+    console.log(`${user.name}(${user.age})はプレミアムユーザーではありません。`);
+  }
+}
+
