@@ -233,13 +233,21 @@
 // console.log(arr2);
 // const arr: readonly number[] = [1, 10, 100];
 // arr[1] = 100
-const arr = [1, 10, 100];
-for (const elm of arr) {
-    console.log(elm);
-}
-console.log(arr);
-const arr1 = [1, 10, 100];
-for (let elm of arr1) {
-    elm *= 10;
-    console.log(elm);
-}
+// const arr = [1, 10, 100];
+// for (const elm of arr) {
+//   console.log(elm);
+// }
+// console.log(arr)
+// const arr1 = [1, 10, 100]
+// for (let elm of arr1) {
+//   elm *= 10
+//   console.log(elm)
+// }
+let tuple = ["foo", 0];
+tuple = ["aiueo", -5555];
+const str = tuple[0];
+const num = tuple[1];
+// const nothing = tuple[2];
+console.log(tuple);
+console.log(str);
+console.log(num);
