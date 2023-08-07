@@ -189,4 +189,13 @@ const obj: FooBarObj = {
   bar: "Hello world",
 };
 
-console.log(obj)
+// console.log(obj)
+
+interface FooBarObj {
+  foo: number;
+  bar: string;
+}
+const obj: FooBarObj = {
+  foo: 0,
+  bar: "string",
+};
