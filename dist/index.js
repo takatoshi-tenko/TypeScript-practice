@@ -243,11 +243,21 @@
 //   elm *= 10
 //   console.log(elm)
 // }
-let tuple = ["foo", 0];
-tuple = ["aiueo", -5555];
-const str = tuple[0];
-const num = tuple[1];
-// const nothing = tuple[2];
-console.log(tuple);
-console.log(str);
+// let tuple: [string, number] = ["foo", 0];
+// tuple = ["aiueo", -5555];
+// const str = tuple[0];
+// const num = tuple[1];
+// // const nothing = tuple[2];
+// console.log(tuple);
+// console.log(str);
+// console.log(num);
+const nested = {
+    num: 123,
+    obj: {
+        foo: "hello",
+        bar: "workd",
+    },
+};
+const { num, obj: { foo }, } = nested;
 console.log(num);
+console.log(foo);
