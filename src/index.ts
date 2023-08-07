@@ -171,11 +171,22 @@ console.log(foo.num);
 // bar2.obj.num = 0;
 // console.log(foo2.obj.num);
 
-const obj: {
+// const obj: {
+//   foo: number;
+//   bar: string;
+// } = {
+//   foo: 123,
+//   bar: "Hello, World!",
+// };
+// console.log(obj)
+
+type FooBarObj = {
   foo: number;
   bar: string;
-} = {
-  foo: 123,
-  bar: "Hello, World!",
 };
+const obj: FooBarObj = {
+  foo: 123,
+  bar: "Hello world",
+};
+
 console.log(obj)
