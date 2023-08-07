@@ -309,26 +309,30 @@
 // console.log(second);
 // console.log(third);
 
-type obj = { foo?: number };
-const obj1: obj = {};
-const obj2: obj = { foo: -1234 };
+// type obj = { foo?: number };
+// const obj1: obj = {};
+// const obj2: obj = { foo: -1234 };
 
-const { foo = 500 } = obj1;
-console.log(foo);
-const { foo: bar = 500 } = obj2;
-console.log(bar);
+// const { foo = 500 } = obj1;
+// console.log(foo);
+// const { foo: bar = 500 } = obj2;
+// console.log(bar);
 
-type NestedObj = {
-  obj?: {
-    foo: number;
-  };
-};
-const nested1: NestedObj = {
-  obj: { foo: 123 },
-};
-const nested2: NestedObj = {};
-const { obj: { foo: foo1 } = { foo: 500 } } = nested1;
-const { obj: { foo: foo2 } = { foo: 500 } } = nested2;
-console.log({ obj: { foo: foo2 } })
-console.log(nested1);
-console.log(nested2);
+// type NestedObj = {
+//   obj?: {
+//     foo: number;
+//   };
+// };
+// const nested1: NestedObj = {
+//   obj: { foo: 123 },
+// };
+// const nested2: NestedObj = {};
+// const { obj: { foo: foo1 } = { foo: 500 } } = nested1;
+// const { obj: { foo: foo2 } = { foo: 500 } } = nested2;
+// console.log({ obj: { foo: foo2 } })
+// console.log(nested1);
+// console.log(nested2);
+
+const d = new Date()
+console.log(d)
+console.log(Date.now())
