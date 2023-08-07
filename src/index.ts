@@ -191,11 +191,25 @@ const obj: FooBarObj = {
 
 // console.log(obj)
 
-interface FooBarObj {
-  foo: number;
-  bar: string;
-}
-const obj: FooBarObj = {
-  foo: 0,
-  bar: "string",
+// interface FooBarObj {
+//   foo: number;
+//   bar: string;
+// }
+// const obj: FooBarObj = {
+//   foo: 0,
+//   bar: "string",
+// };
+
+type PriceData = {
+  [key: string]: number;
 };
+const data: PriceData = {
+  apple: 220,
+  coffee: 120,
+  bento: 500,
+};
+data.chicken = 250;
+data.弁当 = 0;
+console.log(data);
+console.log(data.chicken);
+console.log(data.弁当);
