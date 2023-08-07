@@ -200,16 +200,34 @@ const obj: FooBarObj = {
 //   bar: "string",
 // };
 
-type PriceData = {
-  [key: string]: number;
+// type PriceData = {
+//   [key: string]: number;
+// };
+// const data: PriceData = {
+//   apple: 220,
+//   coffee: 120,
+//   bento: 500,
+// };
+// data.chicken = 250;
+// data.弁当 = 0;
+// console.log(data);
+// console.log(data.chicken);
+// console.log(data.弁当);
+
+type FooBar = {
+  foo: string;
+  bar: number;
 };
-const data: PriceData = {
-  apple: 220,
-  coffee: 120,
-  bento: 500,
+type FooBarBaz = {
+  foo: string;
+  bar: number;
+  baz: boolean;
 };
-data.chicken = 250;
-data.弁当 = 0;
-console.log(data);
-console.log(data.chicken);
-console.log(data.弁当);
+const obj: FooBarBaz = {
+  foo: "hi",
+  bar: 1,
+  baz: false,
+};
+const obj2: FooBar = obj;
+console.log(obj)
+console.log(obj2)

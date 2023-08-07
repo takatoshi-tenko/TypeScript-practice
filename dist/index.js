@@ -1,13 +1,11 @@
 "use strict";
 // const message: string = "Hello World!";
 // console.log(message);
-const data = {
-    apple: 220,
-    coffee: 120,
-    bento: 500,
+const obj = {
+    foo: "hi",
+    bar: 1,
+    baz: false,
 };
-data.chicken = 250;
-data.弁当 = 0;
-console.log(data);
-console.log(data.chicken);
-console.log(data.弁当);
+const obj2 = obj;
+console.log(obj);
+console.log(obj2);
