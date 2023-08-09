@@ -35,11 +35,28 @@ Mary Sue,14,1
 //     console.log(`${user.name}(${user.age})はプレミアムユーザーではありません。`);
 //   }
 // }
-function range(min, max) {
-    const result = [];
-    for (let i = min; i <= max; i++) {
-        result.push(i);
+// function range(min: number, max: number): number[] {
+//   const result = []
+//   for (let i = min; i <= max; i++) {
+//     result.push(i)
+//   }
+//   return result
+// }
+// console.log(range(5, 10))
+function helloWorldTimes(n) {
+    for (let i = 0; i < n; i++) {
+        console.log("Hello World!");
     }
-    return result;
 }
-console.log(range(5, 10));
+helloWorldTimes(5);
+function helloWorldTimes2(n) {
+    if (n > 100) {
+        console.log(`${n}回なんて無理です！`);
+        return;
+    }
+    for (let i = 0; i < n; i++) {
+        console.log("Hello, World!");
+    }
+}
+helloWorldTimes2(5);
+helloWorldTimes2(150);
