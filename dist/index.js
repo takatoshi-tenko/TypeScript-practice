@@ -573,13 +573,41 @@
 //   }
 //   return result;
 // };
-function sabayomi(age) {
-    if (age >= 20) {
-        const lie = age - 5;
-        return lie;
+// function sabayomi(age: number) {
+//   if (age >= 20) {
+//     const lie = age - 5;
+//     return lie;
+//   } else {
+//     return age;
+//   }
+// }
+// console.log(sabayomi(21))
+function getFizzBuzzString(i) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        return "FizzBuzz";
+    }
+    else if (i % 3 === 0) {
+        return "Fizz";
+    }
+    else if (i % 5 === 0) {
+        return "Buzz";
     }
     else {
-        return age;
+        return i;
     }
 }
-console.log(sabayomi(21));
+for (let i = 0; i <= 100; i++) {
+    const message = getFizzBuzzString(i);
+    console.log(message);
+}
+function sequence(start, end) {
+    const result = [];
+    for (let i = 0; i <= end; i++) {
+        result.push(i);
+    }
+    return result;
+}
+for (const i of sequence(1, 100)) {
+    const message = getFizzBuzzString(i);
+    console.log(message);
+}
