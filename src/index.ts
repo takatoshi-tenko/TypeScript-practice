@@ -493,18 +493,24 @@
 // const bar = ():void => {}
 // console.log(bar.name)
 
-type User = { name: string; age: number };
-const getName = (u: User): string => {
-  console.log("u is", u);
-  return u.name;
-};
-const users: User[] = [
-  { name: "uhyo", age: 26 },
-  { name: "John Smith", age: 15 },
-];
+// type User = { name: string; age: number };
+// const getName = (u: User): string => {
+//   console.log("u is", u);
+//   return u.name;
+// };
+// const users: User[] = [
+//   { name: "uhyo", age: 26 },
+//   { name: "John Smith", age: 15 },
+// ];
 
-const names = users.map(getName);
-console.log(names);
+// const names = users.map(getName);
+// console.log(names);
 
-const names2 = users.map((u: User): string => u.name);
-console.log(names2);
+// const names2 = users.map((u: User): string => u.name);
+// console.log(names2);
+
+const xRepeat = (num: number): string => "x".repeat(num);
+console.log(xRepeat(2));
+
+type F = (repeatNum: number) => string;
+const xRepeat2: F = (num: number): string => "x".repeat(num);
