@@ -12,11 +12,15 @@ const users = [];
 const lines = data.split('\n');
 for (const line of lines) {
     if (line === "") {
-        continue;
+        continue; //スキップ処理
     }
     const [name, ageString, premiumString] = line.split(',');
+    console.log(name);
+    console.log(ageString);
+    console.log(premiumString);
     const age = Number(ageString);
     const premiumUser = premiumString === "1";
+    console.log(premiumUser);
     users.push({
         name,
         age,
