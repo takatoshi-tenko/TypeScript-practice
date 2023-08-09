@@ -1,7 +1,12 @@
 "use strict";
 // const message: string = "Hello World!";
 // console.log(message);
-const double = (arg) => arg * 2;
-const add = (left, right) => left + right;
-const bin = double;
-console.log(bin(10, 100));
+function repeat(element, length) {
+    const result = [];
+    for (let i = 0; i < length; i++) {
+        result.push(element);
+    }
+    return result;
+}
+console.log(repeat("a", 5));
+console.log(repeat(123, 3));
