@@ -661,30 +661,54 @@
 // }
 // console.log(sabayomi(21))
 
-function getFizzBuzzString(i: number) {
-  if (i % 3 === 0 && i % 5 === 0) {
-    return "FizzBuzz";
-  } else if (i % 3 === 0) {
-    return "Fizz";
-  } else if (i % 5 === 0) {
-    return "Buzz";
-  } else {
-    return i;
-  }
-}
-for (let i = 0; i <= 100; i++) {
-  const message = getFizzBuzzString(i);
-  console.log(message);
-}
+// function getFizzBuzzString(i: number) {
+//   if (i % 3 === 0 && i % 5 === 0) {
+//     return "FizzBuzz";
+//   } else if (i % 3 === 0) {
+//     return "Fizz";
+//   } else if (i % 5 === 0) {
+//     return "Buzz";
+//   } else {
+//     return i;
+//   }
+// }
+// for (let i = 0; i <= 100; i++) {
+//   const message = getFizzBuzzString(i);
+//   console.log(message);
+// }
 
-function sequence(start: number, end: number): number[] {
+// function sequence(start: number, end: number): number[] {
+//   const result: number[] = [];
+//   for (let i = 0; i <= end; i++) {
+//     result.push(i);
+//   }
+//   return result;
+// }
+// for (const i of sequence(1, 100)) {
+//   const message = getFizzBuzzString(i);
+//   console.log(message);
+// }
+
+function map(array: number[], callback: (value: number) => number): number[] {
   const result: number[] = [];
-  for (let i = 0; i <= end; i++) {
-    result.push(i);
+  for (const elm of array) {
+    result.push(callback(elm));
+    console.log(callback(elm));
   }
   return result;
 }
-for (const i of sequence(1, 100)) {
-  const message = getFizzBuzzString(i);
-  console.log(message);
+const data = [1, 1, 2, 3, 5, 8, 13];
+const result = map(data, (x) => x * 10);
+console.log(result);
+
+function map2<T, U>(array: T[], callback: (value: T) => U): U[] {
+  const result: U[] = [];
+  for (const elm of array) {
+    result.push(callback(elm));
+  }
+  return result;
 }
+
+const data2 = [1, -3, -2, 8, 0, -1];
+const result2: boolean[] = map2(data2, (x) => x >= 0);
+console.log(result2);
