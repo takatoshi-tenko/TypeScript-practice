@@ -639,19 +639,30 @@
 // console.log(uhyo.age);
 // uhyo.age = 26;
 // console.log(uhyo.age);
+// class User {
+//   name: string = "";
+//   age: number = 0;
+//   isAdult(): boolean {
+//     return this.age > 20;
+//   }
+//   setAge(newAge: number) {
+//     this.age = newAge;
+//   }
+// }
+// const uhyo = new User();
+// console.log(uhyo.isAdult());
+// uhyo.setAge(26);
+// console.log(uhyo.isAdult());
 class User {
-    constructor() {
-        this.name = "";
-        this.age = 0;
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+        console.log(this.age);
     }
     isAdult() {
         return this.age > 20;
     }
-    setAge(newAge) {
-        this.age = newAge;
-    }
 }
-const uhyo = new User();
-console.log(uhyo.isAdult());
-uhyo.setAge(26);
+const uhyo = new User("uhyo", 26);
+console.log(uhyo.name);
 console.log(uhyo.isAdult());
