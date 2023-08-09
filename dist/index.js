@@ -558,17 +558,28 @@
 // }
 // const result = repeat("a", 5);
 // console.log(result)
-const repeat = function (element, length) {
-    const result = [];
-    for (let i = 0; i < length; i++) {
-        result.push(element);
+// const repeat = function <T>(element: T, length: number): T[] {
+//   const result: T[] = [];
+//   for (let i = 0; i < length; i++) {
+//     result.push(element);
+//   }
+//   return result;
+// };
+// type Func = <T>(arg: T, num: number) => T[];
+// const repeat2: Func = (element, length) => {
+//   const result = [];
+//   for (let i = 0; i < length; i++) {
+//     result.push(element);
+//   }
+//   return result;
+// };
+function sabayomi(age) {
+    if (age >= 20) {
+        const lie = age - 5;
+        return lie;
     }
-    return result;
-};
-const repeat2 = (element, length) => {
-    const result = [];
-    for (let i = 0; i < length; i++) {
-        result.push(element);
+    else {
+        return age;
     }
-    return result;
-};
+}
+console.log(sabayomi(21));
