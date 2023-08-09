@@ -574,15 +574,53 @@
 // const bin: BinaryFunc = double;
 // console.log(bin(10, 100));
 
-type User<N> = {
-  name: N;
-};
-function repeat<T>(element: T, length: number): T[] {
+// type User<N> = {
+//   name: N;
+// };
+// function repeat<T>(element: T, length: number): T[] {
+//   const result: T[] = [];
+//   for (let i = 0; i < length; i++) {
+//     result.push(element);
+//   }
+//   return result;
+// }
+// console.log(repeat<string>("a", 5));
+// console.log(repeat<number>(123, 3));
+
+const repeat = function <T>(element: T, length: number): T[] {
   const result: T[] = [];
   for (let i = 0; i < length; i++) {
     result.push(element);
   }
   return result;
-}
-console.log(repeat<string>("a", 5));
-console.log(repeat<number>(123, 3));
+};
+const repeat2 = <T>(element: T, length: number): T[] => {
+  const result: T[] = [];
+  for (let i = 0; i < length; i++) {
+    result.push(element);
+  }
+  return result;
+};
+const repeat3 = <T extends { name: string }>(
+  element: T,
+  length: number
+): T[] => {
+  const result: T[] = [];
+  for (let i = 0; i < length; i++) {
+    result.push(element);
+  }
+  return result;
+};
+type HasNameAndAge = {
+  name: string;
+  age: number;
+};
+console.log(
+  repeat3<HasNameAndAge>(
+    {
+      name: "john smith",
+      age: 27,
+    },
+    3
+  )
+);
