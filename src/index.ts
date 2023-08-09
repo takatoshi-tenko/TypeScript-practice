@@ -524,13 +524,28 @@
 // console.log(obj);
 // console.log(obj.greet('JOhn'));
 
-type MyFunc = {
-  isUsed?: boolean;
-  (arg: number): void;
+// type MyFunc = {
+//   isUsed?: boolean;
+//   (arg: number): void;
+// };
+// const double: MyFunc = (arg: number) => {
+//   console.log(arg * 2);
+// };
+// double.isUsed = true
+// console.log(double.isUsed)
+// console.log(double(100))
+
+type HasName = {
+  name: string;
 };
-const double: MyFunc = (arg: number) => {
-  console.log(arg * 2);
+type HasNameAndAge = {
+  name: string;
+  age: number;
 };
-double.isUsed = true
-console.log(double.isUsed)
-console.log(double(100))
+const fromAge = (age: number): HasNameAndAge => ({
+  name: "John Smith",
+  age,
+});
+const f: (age: number) => HasName = fromAge;
+const obj: HasName = f(100);
+console.log(obj)
