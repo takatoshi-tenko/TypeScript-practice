@@ -469,12 +469,26 @@
 // console.log(sum(123, 456));
 // console.log(sum());
 
-const sum = (...args: number[]): number => {
-  let result = 0;
-  for (const num of args) {
-    result += num;
+// const sum = (...args: number[]): number => {
+//   let result = 0;
+//   for (const num of args) {
+//     result += num;
+//   }
+//   return result;
+// };
+// const nums = [1, 2, 3, 4, 5];
+// console.log(sum(...nums));
+
+const toLowerOrUpper = (str: string, upper?: boolean): string => {
+  if (upper) {
+    return str.toUpperCase();
+  } else {
+    return str.toLowerCase();
   }
-  return result;
 };
-const nums = [1, 2, 3, 4, 5];
-console.log(sum(...nums));
+console.log(toLowerOrUpper("Hello"));
+console.log(toLowerOrUpper("Hello", false));
+console.log(toLowerOrUpper("Hello", true));
+
+const bar = ():void => {}
+console.log(bar.name)
