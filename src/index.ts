@@ -625,12 +625,28 @@
 //   )
 // );
 
-function repeat<T>(element: T, length: number): T[] {
+// function repeat<T>(element: T, length: number): T[] {
+//   const result: T[] = [];
+//   for (let i = 0; i < length; i++) {
+//     result.push(element);
+//   }
+//   return result;
+// }
+// const result = repeat("a", 5);
+// console.log(result)
+
+const repeat = function <T>(element: T, length: number): T[] {
   const result: T[] = [];
   for (let i = 0; i < length; i++) {
     result.push(element);
   }
   return result;
-}
-const result = repeat("a", 5);
-console.log(result)
+};
+type Func = <T>(arg: T, num: number) => T[];
+const repeat2: Func = (element, length) => {
+  const result = [];
+  for (let i = 0; i < length; i++) {
+    result.push(element);
+  }
+  return result;
+};
