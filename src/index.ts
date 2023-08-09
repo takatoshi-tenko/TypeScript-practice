@@ -509,8 +509,17 @@
 // const names2 = users.map((u: User): string => u.name);
 // console.log(names2);
 
-const xRepeat = (num: number): string => "x".repeat(num);
-console.log(xRepeat(2));
+// const xRepeat = (num: number): string => "x".repeat(num);
+// console.log(xRepeat(2));
 
-type F = (repeatNum: number) => string;
-const xRepeat2: F = (num: number): string => "x".repeat(num);
+// type F = (repeatNum: number) => string;
+// const xRepeat2: F = (num: number): string => "x".repeat(num);
+
+type Greetable = {
+  greet: (str: string) => string;
+};
+const obj: Greetable = {
+  greet: (str) => `Hello, ${str}`,
+};
+console.log(obj);
+console.log(obj.greet('JOhn'));
