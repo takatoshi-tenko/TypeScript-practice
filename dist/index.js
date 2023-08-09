@@ -1,10 +1,12 @@
 "use strict";
 // const message: string = "Hello World!";
 // console.log(message);
-const fromAge = (age) => ({
-    name: "John Smith",
-    age,
+const showName = (obj) => {
+    console.log(obj.name);
+};
+const g = showName;
+g({
+    name: "uhyo",
+    age: 26,
 });
-const f = fromAge;
-const obj = f(100);
-console.log(obj);
+console.log(g);

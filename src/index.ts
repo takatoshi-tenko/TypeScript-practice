@@ -535,6 +535,21 @@
 // console.log(double.isUsed)
 // console.log(double(100))
 
+// type HasName = {
+//   name: string;
+// };
+// type HasNameAndAge = {
+//   name: string;
+//   age: number;
+// };
+// const fromAge = (age: number): HasNameAndAge => ({
+//   name: "John Smith",
+//   age,
+// });
+// const f: (age: number) => HasName = fromAge;
+// const obj: HasName = f(100);
+// console.log(obj)
+
 type HasName = {
   name: string;
 };
@@ -542,10 +557,12 @@ type HasNameAndAge = {
   name: string;
   age: number;
 };
-const fromAge = (age: number): HasNameAndAge => ({
-  name: "John Smith",
-  age,
+const showName = (obj: HasName) => {
+  console.log(obj.name);
+};
+const g: (obj: HasNameAndAge) => void = showName;
+g({
+  name: "uhyo",
+  age: 26,
 });
-const f: (age: number) => HasName = fromAge;
-const obj: HasName = f(100);
-console.log(obj)
+console.log(g);
