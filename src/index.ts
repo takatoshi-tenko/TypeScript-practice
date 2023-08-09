@@ -337,16 +337,16 @@
 // console.log(d)
 // console.log(Date.now())
 
-type User = {
-  name: string;
-  age: number;
-  premiumUser: boolean;
-};
-const data: string = `
-uhyo,26,1
-John Smith,17,0
-Mary Sue,14,1
-`;
+// type User = {
+//   name: string;
+//   age: number;
+//   premiumUser: boolean;
+// };
+// const data: string = `
+// uhyo,26,1
+// John Smith,17,0
+// Mary Sue,14,1
+// `;
 
 // const result = data.trim().split(',')
 // console.log(result)
@@ -389,21 +389,42 @@ Mary Sue,14,1
 // }
 // console.log(range(5, 10))
 
-function helloWorldTimes(n: number): void {
-  for (let i = 0; i < n; i++) {
-    console.log("Hello World!");
-  }
-}
-helloWorldTimes(5);
+// function helloWorldTimes(n: number): void {
+//   for (let i = 0; i < n; i++) {
+//     console.log("Hello World!");
+//   }
+// }
+// helloWorldTimes(5);
 
-function helloWorldTimes2(n: number): void {
-  if (n > 100) {
-    console.log(`${n}回なんて無理です！`);
-    return;
-  }
-  for (let i = 0; i < n; i++) {
-    console.log("Hello, World!");
-  }
-}
-helloWorldTimes2(5);
-helloWorldTimes2(150);
+// function helloWorldTimes2(n: number): void {
+//   if (n > 100) {
+//     console.log(`${n}回なんて無理です！`);
+//     return;
+//   }
+//   for (let i = 0; i < n; i++) {
+//     console.log("Hello, World!");
+//   }
+// }
+// helloWorldTimes2(5);
+// helloWorldTimes2(150);
+
+type Human = {
+  height: number;
+  weight: number;
+};
+
+const calcBMI = function (human: Human): number {
+  return human.weight / human.height ** 2;
+};
+
+// 分割代入を使用することもできる
+const calcBMI2 = function ({ height, weight }: Human): number {
+  return weight / height ** 2;
+};
+
+const uhyo: Human = {
+  height: 1.84,
+  weight: 72,
+};
+console.log(calcBMI(uhyo));
+console.log(calcBMI2(uhyo));
