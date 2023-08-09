@@ -630,14 +630,28 @@
 // const result2: boolean[] = map2(data2, (x) => x >= 0);
 // console.log(result2);
 // 出力結果→[ true, false, false, true, true, false ]
+// class User {
+//   name: string = "";
+//   age: number = 0;
+// }
+// const uhyo = new User();
+// console.log(uhyo.name);
+// console.log(uhyo.age);
+// uhyo.age = 26;
+// console.log(uhyo.age);
 class User {
     constructor() {
         this.name = "";
         this.age = 0;
     }
+    isAdult() {
+        return this.age > 20;
+    }
+    setAge(newAge) {
+        this.age = newAge;
+    }
 }
 const uhyo = new User();
-console.log(uhyo.name);
-console.log(uhyo.age);
-uhyo.age = 26;
-console.log(uhyo.age);
+console.log(uhyo.isAdult());
+uhyo.setAge(26);
+console.log(uhyo.isAdult());
