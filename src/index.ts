@@ -1,6 +1,8 @@
 // const message: string = "Hello World!";
 // console.log(message);
 
+import { stringify } from "querystring";
+
 // const test: string = "this is test.";
 // console.log(test);
 
@@ -740,7 +742,27 @@
 // uhyo.setAge(26);
 // console.log(uhyo.isAdult());
 
+// class User {
+//   name: string;
+//   age: number;
+
+//   constructor(name: string, age: number) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   isAdult(): boolean {
+//     return this.age > 20;
+//   }
+// }
+// const uhyo = new User("uhyo", 26);
+// console.log(uhyo.name);
+// console.log(uhyo.isAdult());
+
 class User {
+  static adminName: string = "uhyo";
+  static getAdminUser() {
+    return new User(User.adminName, 26);
+  }
   name: string;
   age: number;
 
@@ -749,9 +771,13 @@ class User {
     this.age = age;
   }
   isAdult(): boolean {
-    return this.age > 20;
+    return this.age >= 20;
   }
 }
+
+console.log(User.adminName);
+const admin = User.getAdminUser();
+console.log(admin.isAdult());
+
 const uhyo = new User("uhyo", 26);
-console.log(uhyo.name);
-console.log(uhyo.isAdult());
+// console.log(uhyo.adminName)

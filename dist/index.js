@@ -1,4 +1,3 @@
-"use strict";
 // const message: string = "Hello World!";
 // console.log(message);
 // const test: string = "this is test.";
@@ -653,16 +652,36 @@
 // console.log(uhyo.isAdult());
 // uhyo.setAge(26);
 // console.log(uhyo.isAdult());
+// class User {
+//   name: string;
+//   age: number;
+//   constructor(name: string, age: number) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   isAdult(): boolean {
+//     return this.age > 20;
+//   }
+// }
+// const uhyo = new User("uhyo", 26);
+// console.log(uhyo.name);
+// console.log(uhyo.isAdult());
 class User {
+    static getAdminUser() {
+        return new User(User.adminName, 26);
+    }
     constructor(name, age) {
         this.name = name;
         this.age = age;
-        console.log(this.age);
     }
     isAdult() {
-        return this.age > 20;
+        return this.age >= 20;
     }
 }
+User.adminName = "uhyo";
+console.log(User.adminName);
+const admin = User.getAdminUser();
+console.log(admin.isAdult());
 const uhyo = new User("uhyo", 26);
-console.log(uhyo.name);
-console.log(uhyo.isAdult());
+export {};
+// console.log(uhyo.adminName)
