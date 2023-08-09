@@ -689,26 +689,37 @@
 //   console.log(message);
 // }
 
-function map(array: number[], callback: (value: number) => number): number[] {
-  const result: number[] = [];
-  for (const elm of array) {
-    result.push(callback(elm));
-    console.log(callback(elm));
-  }
-  return result;
-}
-const data = [1, 1, 2, 3, 5, 8, 13];
-const result = map(data, (x) => x * 10);
-console.log(result);
+// function map(array: number[], callback: (value: number) => number): number[] {
+//   const result: number[] = [];
+//   for (const elm of array) {
+//     result.push(callback(elm));
+//     console.log(callback(elm));
+//   }
+//   return result;
+// }
+// const data = [1, 1, 2, 3, 5, 8, 13];
+// const result = map(data, (x) => x * 10);
+// console.log(result);
 
-function map2<T, U>(array: T[], callback: (value: T) => U): U[] {
-  const result: U[] = [];
-  for (const elm of array) {
-    result.push(callback(elm));
-  }
-  return result;
-}
+// function map2<T, U>(array: T[], callback: (value: T) => U): U[] {
+//   const result: U[] = [];
+//   for (const elm of array) {
+//     result.push(callback(elm));
+//   }
+//   return result;
+// }
 
-const data2 = [1, -3, -2, 8, 0, -1];
-const result2: boolean[] = map2(data2, (x) => x >= 0);
-console.log(result2);
+// const data2 = [1, -3, -2, 8, 0, -1];
+// const result2: boolean[] = map2(data2, (x) => x >= 0);
+// console.log(result2);
+// 出力結果→[ true, false, false, true, true, false ]
+
+class User {
+  name: string = "";
+  age: number = 0;
+}
+const uhyo = new User();
+console.log(uhyo.name);
+console.log(uhyo.age);
+uhyo.age = 26;
+console.log(uhyo.age);
