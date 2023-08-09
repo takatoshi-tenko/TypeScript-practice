@@ -479,16 +479,32 @@
 // const nums = [1, 2, 3, 4, 5];
 // console.log(sum(...nums));
 
-const toLowerOrUpper = (str: string, upper?: boolean): string => {
-  if (upper) {
-    return str.toUpperCase();
-  } else {
-    return str.toLowerCase();
-  }
-};
-console.log(toLowerOrUpper("Hello"));
-console.log(toLowerOrUpper("Hello", false));
-console.log(toLowerOrUpper("Hello", true));
+// const toLowerOrUpper = (str: string, upper?: boolean): string => {
+//   if (upper) {
+//     return str.toUpperCase();
+//   } else {
+//     return str.toLowerCase();
+//   }
+// };
+// console.log(toLowerOrUpper("Hello"));
+// console.log(toLowerOrUpper("Hello", false));
+// console.log(toLowerOrUpper("Hello", true));
 
-const bar = ():void => {}
-console.log(bar.name)
+// const bar = ():void => {}
+// console.log(bar.name)
+
+type User = { name: string; age: number };
+const getName = (u: User): string => {
+  console.log("u is", u);
+  return u.name;
+};
+const users: User[] = [
+  { name: "uhyo", age: 26 },
+  { name: "John Smith", age: 15 },
+];
+
+const names = users.map(getName);
+console.log(names);
+
+const names2 = users.map((u: User): string => u.name);
+console.log(names2);
