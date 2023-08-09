@@ -515,11 +515,22 @@
 // type F = (repeatNum: number) => string;
 // const xRepeat2: F = (num: number): string => "x".repeat(num);
 
-type Greetable = {
-  greet: (str: string) => string;
+// type Greetable = {
+//   greet: (str: string) => string;
+// };
+// const obj: Greetable = {
+//   greet: (str) => `Hello, ${str}`,
+// };
+// console.log(obj);
+// console.log(obj.greet('JOhn'));
+
+type MyFunc = {
+  isUsed?: boolean;
+  (arg: number): void;
 };
-const obj: Greetable = {
-  greet: (str) => `Hello, ${str}`,
+const double: MyFunc = (arg: number) => {
+  console.log(arg * 2);
 };
-console.log(obj);
-console.log(obj.greet('JOhn'));
+double.isUsed = true
+console.log(double.isUsed)
+console.log(double(100))

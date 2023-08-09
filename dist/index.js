@@ -1,8 +1,9 @@
 "use strict";
 // const message: string = "Hello World!";
 // console.log(message);
-const obj = {
-    greet: (str) => `Hello, ${str}`,
+const double = (arg) => {
+    console.log(arg * 2);
 };
-console.log(obj);
-console.log(obj.greet('JOhn'));
+double.isUsed = true;
+console.log(double.isUsed);
+console.log(double(100));
