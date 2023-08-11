@@ -1,5 +1,17 @@
 // const message: string = "Hello World!";
 // console.log(message);
+var __classPrivateFieldSet = (this && this.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+};
+var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+};
+var _User_age;
 // const test: string = "this is test.";
 // console.log(test);
 // let greeting, target;
@@ -712,16 +724,38 @@
 // class User2 {
 //   constructor(public name: string, private age: number) {}
 // }
-const User = class {
-    constructor(name, age) {
+// const User = class {
+//   name: string;
+//   age: number;
+//   constructor(name: string, age: number) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   public isAdult(): boolean {
+//     return this.age >= 20;
+//   }
+// };
+// const uhyo = new User("uhyo", 26);
+// console.log(uhyo.name);
+// console.log(uhyo.isAdult());
+class User {
+    constructor(name, age, data) {
+        _User_age.set(this, void 0);
         this.name = name;
-        this.age = age;
+        __classPrivateFieldSet(this, _User_age, age, "f");
+        this.data = data;
     }
     isAdult() {
-        return this.age >= 20;
+        return __classPrivateFieldGet(this, _User_age, "f") >= 20;
     }
-};
-const uhyo = new User("uhyo", 26);
-console.log(uhyo.name);
-console.log(uhyo.isAdult());
+}
+_User_age = new WeakMap();
+const uhyo = new User("uhyo", 26, "追加データ");
+const data = uhyo.data;
+const john = new User("John Smith", 15, { num: 123 });
+const data2 = john.data;
+console.log(uhyo);
+console.log(data);
+console.log(john);
+console.log(data2);
 export {};
