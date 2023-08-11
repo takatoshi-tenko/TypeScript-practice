@@ -847,6 +847,7 @@ class User<T> {
 const uhyo = new User<string>("uhyo", 26, "追加データ");
 const data = uhyo.data;
 const john = new User("John Smith", 15, { num: 123 });
+// const john = new User<{ num: 123 }>("John Smith", 15, { num: 123 }); ←とイコール
 const data2 = john.data;
 console.log(uhyo)
 console.log(data)
