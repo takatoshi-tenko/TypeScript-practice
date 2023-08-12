@@ -885,4 +885,15 @@ console.log(uhyo.isAdult.apply(john, []));
 const boundIsAdult = uhyo.isAdult.bind(uhyo);
 console.log(boundIsAdult());
 console.log(boundIsAdult.call(john));
+class A {
+    constructor() {
+        this.foo = 123;
+        this.bar = this.foo + 100;
+    }
+    getFoo() {
+        return this.foo;
+    }
+}
+const obj = new A();
+console.log(obj.bar, obj.getFoo());
 export {};
