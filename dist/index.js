@@ -803,8 +803,12 @@ class PremiumUser extends User {
         super(...arguments);
         this.rank = 1;
     }
+    isAdult() {
+        return true;
+    }
 }
 const uhyo = new PremiumUser("uhyo", 26);
+const taro = new PremiumUser("TaRO YAMADA", 25);
 console.log(uhyo.rank);
 console.log(uhyo.name);
 console.log(uhyo.isAdult());
@@ -815,4 +819,5 @@ const john = new User("John Smith", 15);
 const uhyo2 = new User("uhyo", 26);
 console.log(getMessage(john));
 console.log(getMessage(uhyo2));
+console.log(taro.isAdult());
 export {};
