@@ -1085,22 +1085,40 @@ import { runInContext } from "vm";
 // console.log(uhyo2.getMessage("こんにちは！"));
 // console.log(uhyo2)
 
+// type Animal = {
+//   species: string;
+//   age: string;
+// };
+// type Human = {
+//   name: string;
+//   age: number;
+// };
+// type User = Animal | Human;
+// const tama: User = {
+//   species: "Felis silvestris catus",
+//   age: "永遠の17歳",
+// };
+// const uhyo: User = {
+//   name: "uhyo",
+//   age: 26,
+// };
+// console.log(tama)
+// console.log(uhyo)
+
 type Animal = {
   species: string;
-  age: string;
-};
-type Human = {
-  name: string;
   age: number;
 };
-type User = Animal | Human;
-const tama: User = {
-  species: "Felis silvestris catus",
-  age: "永遠の17歳",
+type Human = Animal & {
+  name: string;
 };
-const uhyo: User = {
-  name: "uhyo",
+const tama: Animal = {
+  species: "test",
+  age: 3,
+};
+const uhyo: Human = {
+  species: "Homo sapi",
   age: 26,
+  name: "uhyo",
 };
-console.log(tama)
-console.log(uhyo)
+type StringAndNumber = string & number
