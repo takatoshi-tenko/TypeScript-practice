@@ -1023,26 +1023,64 @@ import { runInContext } from "vm";
 //   return sum(nums) / nums.length;
 // }
 
-class EmptyArrayError extends Error {}
+// class EmptyArrayError extends Error {}
 
-try {
-  getAverage([1, 2, 3]);
-  getAverage([]);
-} catch (err) {
-  if (err instanceof EmptyArrayError) {
-    console.log("EmptyArrayErrorをキャッチしました");
-  } else {
-    throw err;
+// try {
+//   getAverage([1, 2, 3]);
+//   getAverage([]);
+// } catch (err) {
+//   if (err instanceof EmptyArrayError) {
+//     console.log("EmptyArrayErrorをキャッチしました");
+//   } else {
+//     throw err;
+//   }
+// }
+// function getAverage(nums: number[]) {
+//   if (nums.length === 0) {
+//     throw new EmptyArrayError("配列が空です");
+//   }
+//   return sum(nums) / nums.length;
+// }
+// function sum(nums: number[]): number {
+//   let result = 0;
+//   for (const num of nums) result += num;
+//   return result;
+// }
+
+type User = {
+  name: string;
+  age: number;
+};
+function createUser(name: string, age: number) {
+  if (name === "") {
+    throw new Error("名前はからにできません！");
+  }
+  return {
+    name,
+    age,
+  };
+}
+function getMessage(user: User, message: string): string {
+  return `${user.name}(${user.age})「${message}」`;
+}
+const uhyo = createUser("uhyo", 25);
+console.log(getMessage(uhyo, "こんにちは"));
+
+class User2 {
+  readonly name: string;
+  readonly age: number;
+  constructor(name: string, age: number) {
+    if (name === "") {
+      throw new Error("名前はからにできません！");
+    }
+    this.name = name;
+    this.age = age;
+  }
+
+  getMessage(message: string): string {
+    return `${this.name}(${this.age})「${message}」`;
   }
 }
-function getAverage(nums: number[]) {
-  if (nums.length === 0) {
-    throw new EmptyArrayError("配列が空です");
-  }
-  return sum(nums) / nums.length;
-}
-function sum(nums: number[]): number {
-  let result = 0;
-  for (const num of nums) result += num;
-  return result;
-}
+const uhyo2 = new User2("uhyo", 26);
+console.log(uhyo2.getMessage("こんにちは！"));
+console.log(uhyo2)
