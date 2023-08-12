@@ -829,27 +829,43 @@ import { stringify } from "querystring";
 // console.log(uhyo.name);
 // console.log(uhyo.isAdult());
 
-class User<T> {
-  name: string;
-  #age: number;
-  readonly data: T;
+// class User<T> {
+//   name: string;
+//   #age: number;
+//   readonly data: T;
 
-  constructor(name: string, age: number, data: T) {
-    this.name = name;
-    this.#age = age;
-    this.data = data;
-  }
+//   constructor(name: string, age: number, data: T) {
+//     this.name = name;
+//     this.#age = age;
+//     this.data = data;
+//   }
 
-  public isAdult(): boolean {
-    return this.#age >= 20;
+//   public isAdult(): boolean {
+//     return this.#age >= 20;
+//   }
+// }
+// const uhyo = new User<string>("uhyo", 26, "追加データ");
+// const data = uhyo.data;
+// const john = new User("John Smith", 15, { num: 123 });
+// // const john = new User<{ num: 123 }>("John Smith", 15, { num: 123 }); ←とイコール
+// const data2 = john.data;
+// console.log(uhyo)
+// console.log(data)
+// console.log(john)
+// console.log(data2)
+
+class User {
+  name = "";
+  age = 0;
+  isAdult(): boolean {
+    return this.age >= 20;
   }
 }
-const uhyo = new User<string>("uhyo", 26, "追加データ");
-const data = uhyo.data;
-const john = new User("John Smith", 15, { num: 123 });
-// const john = new User<{ num: 123 }>("John Smith", 15, { num: 123 }); ←とイコール
-const data2 = john.data;
+const uhyo: User = new User();
+const john: User = {
+  name: "john smith",
+  age: 15,
+  isAdult: () => true,
+};
 console.log(uhyo)
-console.log(data)
 console.log(john)
-console.log(data2)
