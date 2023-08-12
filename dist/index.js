@@ -1112,13 +1112,23 @@
 // let key: HumanKeys = "name";
 // key = "age";
 // key = "hoge";
-function get(obj, key) {
-    return obj[key];
+// function get<T, K extends keyof T>(obj: T, key: K): T[K] {
+//   return obj[key];
+// }
+// type Human = {
+//   name: string;
+//   age: number;
+// };
+// const uhyo: Human = {
+//   name: "uhyo",
+//   age: 26,
+// };
+// const uhyoName = get(uhyo, "name");
+// const uhyoAge = get(uhyo, "age");
+function getFirstFiveLetters(strOrNum) {
+    const str = strOrNum;
+    return str.slice(0, 5);
 }
-const uhyo = {
-    name: "uhyo",
-    age: 26,
-};
-const uhyoName = get(uhyo, "name");
-const uhyoAge = get(uhyo, "age");
+console.log(getFirstFiveLetters("uhyouhyouhyo"));
+console.log(getFirstFiveLetters(123));
 export {};

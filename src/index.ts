@@ -1258,16 +1258,39 @@ import { runInContext } from "vm";
 // key = "age";
 // key = "hoge";
 
-function get<T, K extends keyof T>(obj: T, key: K): T[K] {
-  return obj[key];
+// function get<T, K extends keyof T>(obj: T, key: K): T[K] {
+//   return obj[key];
+// }
+// type Human = {
+//   name: string;
+//   age: number;
+// };
+// const uhyo: Human = {
+//   name: "uhyo",
+//   age: 26,
+// };
+// const uhyoName = get(uhyo, "name");
+// const uhyoAge = get(uhyo, "age");
+
+function getFirstFiveLetters(strOrNum: string | number) {
+  const str = strOrNum as string;
+  return str.slice(0, 5);
 }
+console.log(getFirstFiveLetters("uhyouhyouhyo"));
+// console.log(getFirstFiveLetters(123));
+
+type Animal = {
+  tag: "animal";
+  species: string;
+};
 type Human = {
+  tag: "human";
   name: string;
-  age: number;
 };
-const uhyo: Human = {
-  name: "uhyo",
-  age: 26,
-};
-const uhyoName = get(uhyo, "name");
-const uhyoAge = get(uhyo, "age");
+type User = Animal | Human;
+function getNameIfAllHuman(users: readonly User[]): string[] | undefined {
+  if (users.every((user) => user.tag === "human")) {
+    return (users as Human[]).map((user) => user.name);
+  }
+  return undefined;
+}
