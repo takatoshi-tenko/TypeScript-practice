@@ -1159,16 +1159,18 @@
 //   }
 //   return user2!.name;
 // }
-function doNothing(val) {
-    console.log(val);
-}
-doNothing(3);
-doNothing({
-    user: {
-        name: "uhyo",
-    },
-});
-doNothing(() => {
-    console.log("h1");
-});
-export {};
+// function doNothing(val: unknown) {
+//   console.log(val);
+// }
+// doNothing(3);
+// doNothing({
+//   user: {
+//     name: "uhyo",
+//   },
+// });
+// doNothing(() => {
+//   console.log("h1");
+// });
+import { name, age } from "./uhyo.js";
+console.log(name, age);
+console.log(`uhyoの名前は${name}で年齢は${age}です`);
