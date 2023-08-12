@@ -854,18 +854,31 @@ import { stringify } from "querystring";
 // console.log(john)
 // console.log(data2)
 
+// class User {
+//   name = "";
+//   age = 0;
+//   isAdult(): boolean {
+//     return this.age >= 20;
+//   }
+// }
+// const uhyo: User = new User();
+// const john: User = {
+//   name: "john smith",
+//   age: 15,
+//   isAdult: () => true,
+// };
+// console.log(uhyo)
+// console.log(john)
+
 class User {
-  name = "";
-  age = 0;
-  isAdult(): boolean {
-    return this.age >= 20;
-  }
+  name: string = "";
+  age: number = 0;
 }
-const uhyo: User = new User();
+const uhyo = new User();
+console.log(uhyo instanceof User);
+console.log({} instanceof User);
 const john: User = {
-  name: "john smith",
+  name: "John Smith",
   age: 15,
-  isAdult: () => true,
 };
-console.log(uhyo)
-console.log(john)
+console.log(john instanceof User);

@@ -748,21 +748,33 @@
 // console.log(data)
 // console.log(john)
 // console.log(data2)
+// class User {
+//   name = "";
+//   age = 0;
+//   isAdult(): boolean {
+//     return this.age >= 20;
+//   }
+// }
+// const uhyo: User = new User();
+// const john: User = {
+//   name: "john smith",
+//   age: 15,
+//   isAdult: () => true,
+// };
+// console.log(uhyo)
+// console.log(john)
 class User {
     constructor() {
         this.name = "";
         this.age = 0;
     }
-    isAdult() {
-        return this.age >= 20;
-    }
 }
 const uhyo = new User();
+console.log(uhyo instanceof User);
+console.log({} instanceof User);
 const john = {
-    name: "john smith",
+    name: "John Smith",
     age: 15,
-    isAdult: () => true,
 };
-console.log(uhyo);
-console.log(john);
+console.log(john instanceof User);
 export {};
