@@ -1123,18 +1123,30 @@ import { runInContext } from "vm";
 // };
 // type StringAndNumber = string & number
 
-type Human = { name: string };
-type Animal = { species: string };
-function getName(human: Human) {
-  return human.name;
-}
-function getSpecies(animal: Animal) {
-  return animal.species;
-}
-const uhyo: Human & Animal = {
-  name: "uhyo",
-  species: "HOmo sapi",
+// type Human = { name: string };
+// type Animal = { species: string };
+// function getName(human: Human) {
+//   return human.name;
+// }
+// function getSpecies(animal: Animal) {
+//   return animal.species;
+// }
+// const uhyo: Human & Animal = {
+//   name: "uhyo",
+//   species: "HOmo sapi",
+// };
+// const mysteryFunc = Math.random() < 0.5 ? getName : getSpecies;
+// const value = mysteryFunc(uhyo);
+// console.log(value);
+
+type Human = {
+  name: string;
+  age?: number;
 };
-const mysteryFunc = Math.random() < 0.5 ? getName : getSpecies;
-const value = mysteryFunc(uhyo);
-console.log(value);
+const uhyo: Human = {
+  name: "uhyo",
+  age: 26,
+};
+const john: Human = {
+  name: "John Smith",
+};
