@@ -1172,5 +1172,12 @@
 //   console.log("h1");
 // });
 import { name, age } from "./uhyo.js";
+import uhyoAge from "./uhyoAge.js";
+import increment from "./counter.js";
 console.log(name, age);
 console.log(`uhyoの名前は${name}で年齢は${age}です`);
+console.log(`uhyoの年齢は${uhyoAge}です`);
+console.log(`カウンタの値は${increment()}です`);
+console.log(`カウンタの値は${increment()}です`);
+console.log(`カウンタの値は${increment()}です`);
+console.log(`カウンタの値は${increment()}です`);
