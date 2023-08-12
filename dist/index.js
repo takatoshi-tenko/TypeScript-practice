@@ -882,11 +882,43 @@
 // }
 // const obj = new A();
 // console.log(obj.bar, obj.getFoo());
-console.log("エラーを発生させます");
-throwError();
-console.log("エラーを発生させました");
-function throwError() {
-    const error = new Error("エラーが発生しました！");
-    throw error;
+// console.log("エラーを発生させます");
+// throwError();
+// console.log("エラーを発生させました");
+// function throwError() {
+//   const error = new Error("エラーが発生しました！");
+//   throw error;
+// }
+// function gerAverage(nums: number[]) {
+//   if (nums.length === 0) {
+//     throw Error("配列がからです");
+//   }
+//   return sum(nums) / nums.length;
+// }
+class EmptyArrayError extends Error {
+}
+try {
+    getAverage([1, 2, 3]);
+    // getAverage([]);
+}
+catch (err) {
+    if (err instanceof EmptyArrayError) {
+        console.log("EmptyArrayErrorをキャッチしました");
+    }
+    else {
+        throw err;
+    }
+}
+function getAverage(nums) {
+    if (nums.length === 0) {
+        throw new EmptyArrayError("配列が空です");
+    }
+    return sum(nums) / nums.length;
+}
+function sum(nums) {
+    let result = 0;
+    for (const num of nums)
+        result += num;
+    return result;
 }
 export {};
