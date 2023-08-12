@@ -1169,17 +1169,50 @@ import { runInContext } from "vm";
 // const t: true = true;
 // const three: 3n = 3n;
 
-type SignType = "plus" | "minus";
-function signNumber(type: SignType) {
-  return type === "plus" ? 1 : -1;
-}
-function numberWithSign(num: number, type: SignType | "none") {
-  if (type === "none") {
-    return 0;
+// type SignType = "plus" | "minus";
+// function signNumber(type: SignType) {
+//   return type === "plus" ? 1 : -1;
+// }
+// function numberWithSign(num: number, type: SignType | "none") {
+//   if (type === "none") {
+//     return 0;
+//   } else {
+//     return num * signNumber(type);
+//   }
+// }
+// console.log(numberWithSign(5, "plus"));
+// console.log(numberWithSign(5, "minus"));
+// console.log(numberWithSign(5, "none"));
+
+type Animal = {
+  tag: "animal";
+  species: string;
+};
+type Human = {
+  tag: "human";
+  name: string;
+};
+type User = Animal | Human;
+
+const tama: User = {
+  tag: "animal",
+  species: "Felis catus",
+};
+const uhyo: User = {
+  tag: "human",
+  name: "uhyo",
+};
+// const alien: User = {
+//   tag: "alien",
+//   name: "gray",
+// };
+
+function getUserName(user: User) {
+  if (user.tag === "human") {
+    return user.name;
   } else {
-    return num * signNumber(type);
+    return "名無し";
   }
 }
-console.log(numberWithSign(5, "plus"));
-console.log(numberWithSign(5, "minus"));
-console.log(numberWithSign(5, "none"));
+console.log(getUserName(tama));
+console.log(getUserName(uhyo));

@@ -1,17 +1,25 @@
 // const message: string = "Hello World!";
 // console.log(message);
-function signNumber(type) {
-    return type === "plus" ? 1 : -1;
-}
-function numberWithSign(num, type) {
-    if (type === "none") {
-        return 0;
+const tama = {
+    tag: "animal",
+    species: "Felis catus",
+};
+const uhyo = {
+    tag: "human",
+    name: "uhyo",
+};
+// const alien: User = {
+//   tag: "alien",
+//   name: "gray",
+// };
+function getUserName(user) {
+    if (user.tag === "human") {
+        return user.name;
     }
     else {
-        return num * signNumber(type);
+        return "名無し";
     }
 }
-console.log(numberWithSign(5, "plus"));
-console.log(numberWithSign(5, "minus"));
-console.log(numberWithSign(5, "none"));
+console.log(getUserName(tama));
+console.log(getUserName(uhyo));
 export {};
