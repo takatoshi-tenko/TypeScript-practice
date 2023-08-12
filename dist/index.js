@@ -20,6 +20,14 @@ function getUserName(user) {
         return "名無し";
     }
 }
+function getUsereName2(user) {
+    switch (user.tag) {
+        case "human":
+            return user.name;
+        case "animal":
+            return "名無し";
+    }
+}
 console.log(getUserName(tama));
 console.log(getUserName(uhyo));
 export {};

@@ -1192,7 +1192,11 @@ type Human = {
   tag: "human";
   name: string;
 };
-type User = Animal | Human;
+type Robot = {
+  tag: "human";
+  name: string;
+};
+type User = Animal | Human | Robot;
 
 const tama: User = {
   tag: "animal",
@@ -1214,5 +1218,14 @@ function getUserName(user: User) {
     return "名無し";
   }
 }
+function getUsereName2(user: User) {
+  switch (user.tag) {
+    case "human":
+      return user.name;
+    case "animal":
+      return "名無し";
+  }
+}
+
 console.log(getUserName(tama));
 console.log(getUserName(uhyo));
