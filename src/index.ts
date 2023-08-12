@@ -1,7 +1,7 @@
 // const message: string = "Hello World!";
 // console.log(message);
 
-import { publicDecrypt } from "crypto";
+import { Sign, publicDecrypt } from "crypto";
 import { stringify } from "querystring";
 import { runInContext } from "vm";
 
@@ -1164,7 +1164,22 @@ import { runInContext } from "vm";
 //   const timeOrUndefined = getTimeFunc?.();
 // }
 
-const foo: "foo" = "foo";
-const one: 1 = 1;
-const t: true = true;
-const three: 3n = 3n;
+// const foo: "foo" = "foo";
+// const one: 1 = 1;
+// const t: true = true;
+// const three: 3n = 3n;
+
+type SignType = "plus" | "minus";
+function signNumber(type: SignType) {
+  return type === "plus" ? 1 : -1;
+}
+function numberWithSign(num: number, type: SignType | "none") {
+  if (type === "none") {
+    return 0;
+  } else {
+    return num * signNumber(type);
+  }
+}
+console.log(numberWithSign(5, "plus"));
+console.log(numberWithSign(5, "minus"));
+console.log(numberWithSign(5, "none"));
