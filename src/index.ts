@@ -1047,40 +1047,54 @@ import { runInContext } from "vm";
 //   return result;
 // }
 
-type User = {
-  name: string;
-  age: number;
+// type User = {
+//   name: string;
+//   age: number;
+// };
+// function createUser(name: string, age: number) {
+//   if (name === "") {
+//     throw new Error("名前はからにできません！");
+//   }
+//   return {
+//     name,
+//     age,
+//   };
+// }
+// function getMessage(user: User, message: string): string {
+//   return `${user.name}(${user.age})「${message}」`;
+// }
+// const uhyo = createUser("uhyo", 25);
+// console.log(getMessage(uhyo, "こんにちは"));
+
+// class User2 {
+//   readonly name: string;
+//   readonly age: number;
+//   constructor(name: string, age: number) {
+//     if (name === "") {
+//       throw new Error("名前はからにできません！");
+//     }
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   getMessage(message: string): string {
+//     return `${this.name}(${this.age})「${message}」`;
+//   }
+// }
+// const uhyo2 = new User2("uhyo", 26);
+// console.log(uhyo2.getMessage("こんにちは！"));
+// console.log(uhyo2)
+
+type Animal = {
+  species: string;
 };
-function createUser(name: string, age: number) {
-  if (name === "") {
-    throw new Error("名前はからにできません！");
-  }
-  return {
-    name,
-    age,
-  };
-}
-function getMessage(user: User, message: string): string {
-  return `${user.name}(${user.age})「${message}」`;
-}
-const uhyo = createUser("uhyo", 25);
-console.log(getMessage(uhyo, "こんにちは"));
-
-class User2 {
-  readonly name: string;
-  readonly age: number;
-  constructor(name: string, age: number) {
-    if (name === "") {
-      throw new Error("名前はからにできません！");
-    }
-    this.name = name;
-    this.age = age;
-  }
-
-  getMessage(message: string): string {
-    return `${this.name}(${this.age})「${message}」`;
-  }
-}
-const uhyo2 = new User2("uhyo", 26);
-console.log(uhyo2.getMessage("こんにちは！"));
-console.log(uhyo2)
+type Human = {
+  name: string;
+};
+type User = Animal | Human;
+const tama: User = {
+  species: "Felis silvestris catus",
+};
+const uhyo: User = {
+  name: "uhyo",
+};
