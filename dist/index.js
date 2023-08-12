@@ -21,17 +21,23 @@ class User {
     isAdult() {
         return __classPrivateFieldGet(this, _User_age, "f") >= 20;
     }
+    filterOlder(users) {
+        return users.filter((u) => __classPrivateFieldGet(u, _User_age, "f") > __classPrivateFieldGet(this, _User_age, "f"));
+    }
 }
 _User_age = new WeakMap();
-const uhyo = new User("uhyo", 26);
+const uhyo = new User("uhyo", 25);
 const john = new User("John", 15);
+const bob = new User("Bob", 40);
+const older = uhyo.filterOlder([john, bob]);
+console.log(older);
 console.log(uhyo.isAdult === john.isAdult);
 const user = {
     name: "uhyo",
     age: 26,
     isAdult() {
         return this.age >= 20;
-    }
+    },
 };
 console.log(user.isAdult());
 user.age = 15;
