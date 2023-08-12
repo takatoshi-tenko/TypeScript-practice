@@ -1,33 +1,19 @@
 // const message: string = "Hello World!";
 // console.log(message);
-const tama = {
-    tag: "animal",
-    species: "Felis catus",
-};
+function setAge(human, age) {
+    return {
+        ...human,
+        age,
+    };
+}
 const uhyo = {
-    tag: "human",
+    type: "human",
     name: "uhyo",
+    age: 26,
 };
-// const alien: User = {
-//   tag: "alien",
-//   name: "gray",
-// };
-function getUserName(user) {
-    if (user.tag === "human") {
-        return user.name;
-    }
-    else {
-        return "名無し";
-    }
-}
-function getUsereName2(user) {
-    switch (user.tag) {
-        case "human":
-            return user.name;
-        case "animal":
-            return "名無し";
-    }
-}
-console.log(getUserName(tama));
-console.log(getUserName(uhyo));
+const uhyo2 = setAge(uhyo, 27);
+console.log(uhyo2);
+let key = "name";
+key = "age";
+key = "hoge";
 export {};

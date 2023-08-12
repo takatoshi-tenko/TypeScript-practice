@@ -1184,48 +1184,76 @@ import { runInContext } from "vm";
 // console.log(numberWithSign(5, "minus"));
 // console.log(numberWithSign(5, "none"));
 
-type Animal = {
-  tag: "animal";
-  species: string;
-};
-type Human = {
-  tag: "human";
-  name: string;
-};
-type Robot = {
-  tag: "human";
-  name: string;
-};
-type User = Animal | Human | Robot;
-
-const tama: User = {
-  tag: "animal",
-  species: "Felis catus",
-};
-const uhyo: User = {
-  tag: "human",
-  name: "uhyo",
-};
-// const alien: User = {
-//   tag: "alien",
-//   name: "gray",
+// type Animal = {
+//   tag: "animal";
+//   species: string;
 // };
+// type Human = {
+//   tag: "human";
+//   name: string;
+// };
+// type Robot = {
+//   tag: "human";
+//   name: string;
+// };
+// type User = Animal | Human | Robot;
 
-function getUserName(user: User) {
-  if (user.tag === "human") {
-    return user.name;
-  } else {
-    return "名無し";
-  }
-}
-function getUsereName2(user: User) {
-  switch (user.tag) {
-    case "human":
-      return user.name;
-    case "animal":
-      return "名無し";
-  }
-}
+// const tama: User = {
+//   tag: "animal",
+//   species: "Felis catus",
+// };
+// const uhyo: User = {
+//   tag: "human",
+//   name: "uhyo",
+// };
+// // const alien: User = {
+// //   tag: "alien",
+// //   name: "gray",
+// // };
 
-console.log(getUserName(tama));
-console.log(getUserName(uhyo));
+// function getUserName(user: User) {
+//   if (user.tag === "human") {
+//     return user.name;
+//   } else {
+//     return "名無し";
+//   }
+// }
+// function getUsereName2(user: User) {
+//   switch (user.tag) {
+//     case "human":
+//       return user.name;
+//     case "animal":
+//       return "名無し";
+//   }
+// }
+
+// console.log(getUserName(tama));
+// console.log(getUserName(uhyo));
+
+type Human = {
+  type: "human";
+  name: string;
+  age: number;
+};
+function setAge(human: Human, age: Human["age"]) {
+  return {
+    ...human,
+    age,
+  };
+}
+const uhyo: Human = {
+  type: "human",
+  name: "uhyo",
+  age: 26,
+};
+const uhyo2 = setAge(uhyo, 27);
+console.log(uhyo2);
+
+type Human2 = {
+  name: string;
+  age: number;
+};
+type HumanKeys = keyof Human;
+let key: HumanKeys = "name";
+key = "age";
+key = "hoge";
