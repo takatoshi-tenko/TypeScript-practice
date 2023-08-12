@@ -1,10 +1,10 @@
 // const message: string = "Hello World!";
 // console.log(message);
-const uhyo = {
-    name: "uhyo",
-    age: 26,
-};
-const john = {
-    name: "John Smith",
-};
+function useMaybeHuman(human) {
+    const age = human?.age;
+    console.log(age);
+}
+function useTime(getTimeFunc) {
+    const timeOrUndefined = getTimeFunc?.();
+}
 export {};

@@ -1139,14 +1139,27 @@ import { runInContext } from "vm";
 // const value = mysteryFunc(uhyo);
 // console.log(value);
 
+// type Human = {
+//   name: string;
+//   age?: number;
+// };
+// const uhyo: Human = {
+//   name: "uhyo",
+//   age: 26,
+// };
+// const john: Human = {
+//   name: "John Smith",
+// };
+
 type Human = {
   name: string;
-  age?: number;
+  age: number;
 };
-const uhyo: Human = {
-  name: "uhyo",
-  age: 26,
-};
-const john: Human = {
-  name: "John Smith",
-};
+function useMaybeHuman(human: Human | undefined) {
+  const age = human?.age;
+  console.log(age);
+}
+type GetTimeFunc = () => Date;
+function useTime(getTimeFunc: GetTimeFunc | undefined) {
+  const timeOrUndefined = getTimeFunc?.();
+}
