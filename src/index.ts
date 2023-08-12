@@ -1105,20 +1105,36 @@ import { runInContext } from "vm";
 // console.log(tama)
 // console.log(uhyo)
 
-type Animal = {
-  species: string;
-  age: number;
-};
-type Human = Animal & {
-  name: string;
-};
-const tama: Animal = {
-  species: "test",
-  age: 3,
-};
-const uhyo: Human = {
-  species: "Homo sapi",
-  age: 26,
+// type Animal = {
+//   species: string;
+//   age: number;
+// };
+// type Human = Animal & {
+//   name: string;
+// };
+// const tama: Animal = {
+//   species: "test",
+//   age: 3,
+// };
+// const uhyo: Human = {
+//   species: "Homo sapi",
+//   age: 26,
+//   name: "uhyo",
+// };
+// type StringAndNumber = string & number
+
+type Human = { name: string };
+type Animal = { species: string };
+function getName(human: Human) {
+  return human.name;
+}
+function getSpecies(animal: Animal) {
+  return animal.species;
+}
+const uhyo: Human & Animal = {
   name: "uhyo",
+  species: "HOmo sapi",
 };
-type StringAndNumber = string & number
+const mysteryFunc = Math.random() < 0.5 ? getName : getSpecies;
+const value = mysteryFunc(uhyo);
+console.log(value);

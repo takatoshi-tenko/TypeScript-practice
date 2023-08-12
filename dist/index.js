@@ -1,13 +1,16 @@
 // const message: string = "Hello World!";
 // console.log(message);
-const tama = {
-    species: "Felis silvestris catus",
-    age: "永遠の17歳",
-};
+function getName(human) {
+    return human.name;
+}
+function getSpecies(animal) {
+    return animal.species;
+}
 const uhyo = {
     name: "uhyo",
-    age: 26,
+    species: "HOmo sapi",
 };
-console.log(tama);
-console.log(uhyo);
+const mysteryFunc = Math.random() < 0.5 ? getName : getSpecies;
+const value = mysteryFunc(uhyo);
+console.log(value);
 export {};
