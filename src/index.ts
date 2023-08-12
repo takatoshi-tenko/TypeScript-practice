@@ -1151,15 +1151,20 @@ import { runInContext } from "vm";
 //   name: "John Smith",
 // };
 
-type Human = {
-  name: string;
-  age: number;
-};
-function useMaybeHuman(human: Human | undefined) {
-  const age = human?.age;
-  console.log(age);
-}
-type GetTimeFunc = () => Date;
-function useTime(getTimeFunc: GetTimeFunc | undefined) {
-  const timeOrUndefined = getTimeFunc?.();
-}
+// type Human = {
+//   name: string;
+//   age: number;
+// };
+// function useMaybeHuman(human: Human | undefined) {
+//   const age = human?.age;
+//   console.log(age);
+// }
+// type GetTimeFunc = () => Date;
+// function useTime(getTimeFunc: GetTimeFunc | undefined) {
+//   const timeOrUndefined = getTimeFunc?.();
+// }
+
+const foo: "foo" = "foo";
+const one: 1 = 1;
+const t: true = true;
+const three: 3n = 3n;
