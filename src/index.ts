@@ -1230,30 +1230,44 @@ import { runInContext } from "vm";
 // console.log(getUserName(tama));
 // console.log(getUserName(uhyo));
 
+// type Human = {
+//   type: "human";
+//   name: string;
+//   age: number;
+// };
+// function setAge(human: Human, age: Human["age"]) {
+//   return {
+//     ...human,
+//     age,
+//   };
+// }
+// const uhyo: Human = {
+//   type: "human",
+//   name: "uhyo",
+//   age: 26,
+// };
+// const uhyo2 = setAge(uhyo, 27);
+// console.log(uhyo2);
+
+// type Human2 = {
+//   name: string;
+//   age: number;
+// };
+// type HumanKeys = keyof Human;
+// let key: HumanKeys = "name";
+// key = "age";
+// key = "hoge";
+
+function get<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
 type Human = {
-  type: "human";
   name: string;
   age: number;
 };
-function setAge(human: Human, age: Human["age"]) {
-  return {
-    ...human,
-    age,
-  };
-}
 const uhyo: Human = {
-  type: "human",
   name: "uhyo",
   age: 26,
 };
-const uhyo2 = setAge(uhyo, 27);
-console.log(uhyo2);
-
-type Human2 = {
-  name: string;
-  age: number;
-};
-type HumanKeys = keyof Human;
-let key: HumanKeys = "name";
-key = "age";
-key = "hoge";
+const uhyoName = get(uhyo, "name");
+const uhyoAge = get(uhyo, "age");
