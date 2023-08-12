@@ -977,33 +977,48 @@ import { runInContext } from "vm";
 // user.age = 15;
 // console.log(user.isAdult());
 
-class User {
-  name: string;
-  #age: number;
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.#age = age;
-  }
+// class User {
+//   name: string;
+//   #age: number;
+//   constructor(name: string, age: number) {
+//     this.name = name;
+//     this.#age = age;
+//   }
 
-  public isAdult(): boolean {
-    return this.#age >= 20;
-  }
+//   public isAdult(): boolean {
+//     return this.#age >= 20;
+//   }
+// }
+// const uhyo = new User("uhyo", 25);
+// const john = new User("John Smith", 15);
+// console.log(uhyo.isAdult());
+// console.log(uhyo.isAdult.apply(john, []));
+
+// const boundIsAdult = uhyo.isAdult.bind(uhyo);
+// console.log(boundIsAdult());
+// console.log(boundIsAdult.call(john));
+
+// class A {
+//   foo = 123;
+//   bar = this.foo + 100;
+//   getFoo() {
+//     return this.foo;
+//   }
+// }
+// const obj = new A();
+// console.log(obj.bar, obj.getFoo());
+
+console.log("エラーを発生させます");
+throwError();
+console.log("エラーを発生させました");
+function throwError() {
+  const error = new Error("エラーが発生しました！");
+  throw error;
 }
-const uhyo = new User("uhyo", 25);
-const john = new User("John Smith", 15);
-console.log(uhyo.isAdult());
-console.log(uhyo.isAdult.apply(john, []));
 
-const boundIsAdult = uhyo.isAdult.bind(uhyo);
-console.log(boundIsAdult());
-console.log(boundIsAdult.call(john));
-
-class A {
-  foo = 123;
-  bar = this.foo + 100;
-  getFoo() {
-    return this.foo;
+function gerAverage(nums: number[]) {
+  if (nums.length === 0) {
+    throw Error("配列がからです");
   }
+  return sum(nums) / nums.length;
 }
-const obj = new A();
-console.log(obj.bar, obj.getFoo());
