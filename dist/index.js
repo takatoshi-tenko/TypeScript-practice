@@ -23,4 +23,17 @@ class User {
     }
 }
 _User_age = new WeakMap();
+const uhyo = new User("uhyo", 26);
+const john = new User("John", 15);
+console.log(uhyo.isAdult === john.isAdult);
+const user = {
+    name: "uhyo",
+    age: 26,
+    isAdult() {
+        return this.age >= 20;
+    }
+};
+console.log(user.isAdult());
+user.age = 15;
+console.log(user.isAdult());
 export {};
