@@ -1399,20 +1399,26 @@ import { readFile } from "fs/promises";
 //   console.log("3");
 // });
 
-const p = new Promise<number>((resolve) => {
-  setTimeout(() => {
-    resolve(100);
-  }, 3000);
-});
-p.then((num) => {
-  console.log(`結果は ${num}`);
+// const p = new Promise<number>((resolve) => {
+//   setTimeout(() => {
+//     resolve(100);
+//   }, 3000);
+// });
+// p.then((num) => {
+//   console.log(`結果は ${num}`);
+// });
+
+// const sloopReject = (duration: number) => {
+//   return new Promise<never>((resolve, reject) => {
+//     setTimeout(reject, duration);
+//   });
+// };
+// sloopReject(3000).catch(() => {
+//   console.log("失敗!!!");
+// });
+
+const p = Promise.resolve(100);
+p.then((result) => {
+  console.log(`result is ${result}`);
 });
 
-const sloopReject = (duration: number) => {
-  return new Promise<never>((resolve, reject) => {
-    setTimeout(reject, duration);
-  });
-};
-sloopReject(3000).catch(() => {
-  console.log("失敗!!!");
-});
