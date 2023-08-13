@@ -2,6 +2,7 @@
 // console.log(message);
 
 import { Sign, publicDecrypt } from "crypto";
+import { readFile } from "fs";
 import { stringify } from "querystring";
 import { runInContext } from "vm";
 
@@ -1334,12 +1335,39 @@ import { runInContext } from "vm";
 // console.log(`カウンタの値は${increment()}です`);
 // console.log(`カウンタの値は${increment()}です`);
 
-type Animal = {
-  species: string;
-  age: number;
-};
-const tama: Animal = {
-  species: "Feils silvestris catus",
-  age: 1,
-};
-export type { Animal, tama };
+// type Animal = {
+//   species: string;
+//   age: number;
+// };
+// const tama: Animal = {
+//   species: "Feils silvestris catus",
+//   age: 1,
+// };
+// export type { Animal, tama };
+
+console.log("1.読み込み開始します");
+readFile("filename.txt", (data) => {
+  console.log("3. 読み込みました");
+});
+console.log("2. 読み込み開始しました");
+
+import { createInterface } from "readline";
+
+// const rl = createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+// rl.question("文字列を入力してください", (line) => {
+//   console.log(`${line}が入力されました`);
+//   rl.close();
+// });
+
+setTimeout(() => {
+  console.log("タイマーが呼び出されました");
+}, 3000);
+console.log("タイマーを設定しました");
+
+readFile("foo", "utf8", (err, result) => {
+  console.log(result);
+});
+console.log("読み込み開始");
