@@ -1436,11 +1436,29 @@ import { readFile } from "fs/promises";
 //     console.log(result);
 //   });
 
-async function get3(): Promise<number> {
+// async function get3(): Promise<number> {
+//   return 3;
+// }
+
+// const p = get3();
+// p.then((num) => {
+//   console.log(`num is ${num}`);
+// });
+
+const sleep = (duration: number) => {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, duration);
+  });
+};
+async function get3() {
+  console.log("test`1");
+  await sleep(1000);
+  console.log("test`2");
   return 3;
 }
-
+console.log("test`3");
 const p = get3();
 p.then((num) => {
   console.log(`num is ${num}`);
 });
+console.log("test`4");
