@@ -1417,8 +1417,21 @@ import { readFile } from "fs/promises";
 //   console.log("失敗!!!");
 // });
 
-const p = Promise.resolve(100);
-p.then((result) => {
-  console.log(`result is ${result}`);
-});
+// const p = Promise.resolve(100);
+// p.then((result) => {
+//   console.log(`result is ${result}`);
+// });
 
+const repeat10 = (str: string) =>
+  new Promise<string>((resolve) => {
+    setTimeout(() => {
+      resolve(str.repeat(10));
+    }, 1000);
+  });
+console.log(repeat10);
+
+readFile("foo.txt", "utf8")
+  .then((result) => repeat10(result))
+  .then((result) => {
+    console.log(result);
+  });
