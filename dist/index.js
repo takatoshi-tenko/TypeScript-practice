@@ -1212,13 +1212,27 @@
 //   console.log(result);
 // });
 // console.log("読み込み開始");
-import { performance } from "perf_hooks";
-setTimeout(() => {
-    console.log("タイマー呼び出し");
-}, 100);
-const startTime = performance.now();
-let count = 0;
-while (performance.now() - startTime < 1000) {
-    count++;
-}
-console.log(count);
+// import { performance } from "perf_hooks";
+// setTimeout(() => {
+//   console.log("タイマー呼び出し");
+// }, 100);
+// const startTime = performance.now();
+// let count = 0;
+// while (performance.now() - startTime < 1000) {
+//   count++;
+// }
+// console.log(count);
+import { readFile } from "fs/promises";
+const p = readFile("foo.txt", "utf8");
+p.then((result) => {
+    console.log("成功", result);
+});
+p.catch((result) => {
+    console.log("失敗", result);
+});
+p.then((result) => {
+    console.log("2");
+});
+p.then((result) => {
+    console.log("3");
+});
