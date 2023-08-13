@@ -1422,16 +1422,25 @@ import { readFile } from "fs/promises";
 //   console.log(`result is ${result}`);
 // });
 
-const repeat10 = (str: string) =>
-  new Promise<string>((resolve) => {
-    setTimeout(() => {
-      resolve(str.repeat(10));
-    }, 1000);
-  });
-console.log(repeat10);
+// const repeat10 = (str: string) =>
+//   new Promise<string>((resolve) => {
+//     setTimeout(() => {
+//       resolve(str.repeat(10));
+//     }, 1000);
+//   });
+// console.log(repeat10);
 
-readFile("foo.txt", "utf8")
-  .then((result) => repeat10(result))
-  .then((result) => {
-    console.log(result);
-  });
+// readFile("foo.txt", "utf8")
+//   .then((result) => repeat10(result))
+//   .then((result) => {
+//     console.log(result);
+//   });
+
+async function get3(): Promise<number> {
+  return 3;
+}
+
+const p = get3();
+p.then((num) => {
+  console.log(`num is ${num}`);
+});
