@@ -1345,13 +1345,13 @@ import { runInContext } from "vm";
 // };
 // export type { Animal, tama };
 
-console.log("1.読み込み開始します");
-readFile("filename.txt", (data) => {
-  console.log("3. 読み込みました");
-});
-console.log("2. 読み込み開始しました");
+// console.log("1.読み込み開始します");
+// readFile("filename.txt", (data) => {
+//   console.log("3. 読み込みました");
+// });
+// console.log("2. 読み込み開始しました");
 
-import { createInterface } from "readline";
+// import { createInterface } from "readline";
 
 // const rl = createInterface({
 //   input: process.stdin,
@@ -1362,12 +1362,23 @@ import { createInterface } from "readline";
 //   rl.close();
 // });
 
-setTimeout(() => {
-  console.log("タイマーが呼び出されました");
-}, 3000);
-console.log("タイマーを設定しました");
+// setTimeout(() => {
+//   console.log("タイマーが呼び出されました");
+// }, 3000);
+// console.log("タイマーを設定しました");
 
-readFile("foo", "utf8", (err, result) => {
-  console.log(result);
-});
-console.log("読み込み開始");
+// readFile("foo", "utf8", (err, result) => {
+//   console.log(result);
+// });
+// console.log("読み込み開始");
+
+import { performance } from "perf_hooks";
+setTimeout(() => {
+  console.log("タイマー呼び出し");
+}, 100);
+const startTime = performance.now();
+let count = 0;
+while (performance.now() - startTime < 1000) {
+  count++;
+}
+console.log(count);

@@ -1,6 +1,5 @@
 // const message: string = "Hello World!";
 // console.log(message);
-import { readFile } from "fs";
 // const test: string = "this is test.";
 // console.log(test);
 // let greeting, target;
@@ -1191,11 +1190,12 @@ import { readFile } from "fs";
 //   age: 1,
 // };
 // export type { Animal, tama };
-console.log("1.読み込み開始します");
-readFile("filename.txt", (data) => {
-    console.log("3. 読み込みました");
-});
-console.log("2. 読み込み開始しました");
+// console.log("1.読み込み開始します");
+// readFile("filename.txt", (data) => {
+//   console.log("3. 読み込みました");
+// });
+// console.log("2. 読み込み開始しました");
+// import { createInterface } from "readline";
 // const rl = createInterface({
 //   input: process.stdin,
 //   output: process.stdout,
@@ -1204,11 +1204,21 @@ console.log("2. 読み込み開始しました");
 //   console.log(`${line}が入力されました`);
 //   rl.close();
 // });
+// setTimeout(() => {
+//   console.log("タイマーが呼び出されました");
+// }, 3000);
+// console.log("タイマーを設定しました");
+// readFile("foo", "utf8", (err, result) => {
+//   console.log(result);
+// });
+// console.log("読み込み開始");
+import { performance } from "perf_hooks";
 setTimeout(() => {
-    console.log("タイマーが呼び出されました");
-}, 3000);
-console.log("タイマーを設定しました");
-readFile("foo", "utf8", (err, result) => {
-    console.log(result);
-});
-console.log("読み込み開始");
+    console.log("タイマー呼び出し");
+}, 100);
+const startTime = performance.now();
+let count = 0;
+while (performance.now() - startTime < 1000) {
+    count++;
+}
+console.log(count);
